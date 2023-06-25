@@ -1,13 +1,17 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+ $texto=" ";
+//if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['register'])) {
     // Obtener el dato enviado por el formulario
     $datos = $_POST['datos'];
 
     // Realizar la conexión a la base de datos MySQL
-    $servername = "127.0.0.1";
+    $servername = "localhost";
     $username = "root";
     $password = "";
     $database = "bd";
+
+    $conex = mysqli_connect("localhost","root","","bd");
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -17,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Insertar el dato en la base de datos
-    $sql = "INSERT INTO datos VALUES ('$datos')";
+    $sql = "INSERT INTO datos (datos) VALUES ('$datos')";
+    
 
     if ($conn->query($sql) === TRUE) {
         echo "El dato se ha guardado en la base de datos MySQL correctamente.";
@@ -28,4 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Cerrar la conexión
     $conn->close();
 }
+
+
 ?>

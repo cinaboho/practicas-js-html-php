@@ -1,8 +1,7 @@
 function guardarEnLocal() {
     if (navigator.onLine) {
         // Enviar formulario directamente a MySQL
-        enviarDatosAlServidor();
-
+        enviarDatosAlServidor()
     } else {
         // Almacenar en Local Storage
         var datos = document.getElementById('datos');
@@ -23,8 +22,7 @@ window.addEventListener('load', function() {
 window.addEventListener('online', enviarDatosAlServidor);
 
 function enviarDatosAlServidor() {
-    var datos = localStorage.getItem("datos");
-
+    var datos = localStorage.getItem("datos")
     if (datos!="") {
         // Enviar dato a la página PHP para guardar en MySQL
         var xhttp = new XMLHttpRequest();
@@ -33,11 +31,8 @@ function enviarDatosAlServidor() {
         xhttp.send("datos=" + datos);
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert("El dato se ha guardado en la base de datos MySQL.");
+             alert("El dato se ha guardado en la base de datos MySQL.");
                 localStorage.removeItem("datos");
-            }
-            else{
-                alert("No se guardo nada");
             }
         };
     }
