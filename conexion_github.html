@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>CONEXIÓN A API’S: PROBANDO GITHUB API V3.0</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style type="text/css">
+	@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+	#irmiembros{
+		font-size: 1em;
+		font-weight: bold;
+	}	
+	#result2{
+		
+	}
+
+	.avatares{
+		display:inline-block;
+		margin:0 1em;
+		width:150px;
+	}
+
+	.dir:before{
+		content: "\e001";
+		font-size: 2em;
+		font-family: icomoon;
+		margin-right: 0.5em;
+	}
+	.espacio{
+		margin-left: 1em;
+	}
+
+	.file:before{
+		content: "\e000";
+		font-size: 2em;
+		font-family: icomoon;
+		margin-right: 0.5em;
+	}
+
+	.jumbotron{
+		text-align: center;
+	}	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h3 class="text-muted">CONEXIÓN A API’S: PROBANDO GITHUB API V3.0</h3>
+		</header>
+		<div id="result" class="jumbotron"></div>	
+		<section id="result2" class="col-lg-6"></section>
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+<script src="github.js"></script>
+</body>
+</html>
